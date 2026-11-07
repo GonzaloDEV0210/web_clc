@@ -1,0 +1,1 @@
+var e=`/assets/hero-natacion-jngUWfsK.jpg`;export{e as t};

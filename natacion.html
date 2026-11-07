@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <link rel="preload" as="image" href="assets/images/logo-clc.png?v=2"/>
+  <link rel="stylesheet" href="assets/styles-Crbfe6pi.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap"/>
+  <title>Natación — CLC Club Deportivo La Católica</title>
+  <meta name="description" content="Natación en piscina semiolímpica temperada y techada en Carabayllo. Clases para todas las edades todo el año."/>
+  <meta name="author" content="Club Deportivo La Católica"/>
+  <meta property="og:title" content="Natación — CLC Club Deportivo La Católica"/>
+  <meta property="og:description" content="Natación en piscina semiolímpica temperada y techada en Carabayllo. Clases para todas las edades todo el año."/>
+  <meta property="og:type" content="website"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+  <style>
+    /* Responsive System */
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body { overflow-x: hidden; width: 100%; }
+
+    /* Bento Grid */
+    .bento-grid { display: grid; gap: 0.75rem; grid-template-columns: 1fr; }
+    @media (min-width: 640px) { .bento-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; } }
+    @media (min-width: 1024px) {
+      .bento-grid { grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+      .bento-hero { grid-column: span 2; grid-row: span 2; min-height: 380px; }
+      .bento-natacion { grid-column: span 2; min-height: 180px; }
+      .bento-sm { min-height: 180px; }
+      .bento-benefits { grid-column: span 2; min-height: 180px; }
+    }
+    .bento-hero { min-height: 240px; }
+    @media (min-width: 640px) { .bento-hero { min-height: 300px; grid-column: span 2; } }
+
+    /* Disciplines Grid */
+    .disc-img { aspect-ratio: 3/2; }
+    @media (min-width: 480px) { .disc-img { aspect-ratio: 4/3; } }
+    @media (min-width: 768px) { .disc-img { aspect-ratio: 3/2; } }
+
+    .disc-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+    @media (min-width: 480px) { .disc-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .disc-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 1280px) { .disc-grid { grid-template-columns: repeat(5, 1fr); } }
+
+    /* Fluid typography */
+    .hero-h1 { font-size: clamp(1.75rem, 5vw, 3.75rem); line-height: 1.05; }
+    .page-h1 { font-size: clamp(2rem, 6vw, 4.25rem); line-height: 1.02; }
+
+    /* Responsive Tables */
+    .table-container {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border-radius: 0.75rem;
+      border: 1px solid rgba(15, 27, 61, 0.1);
+      width: 100%;
+    }
+    .table-container table { min-width: 440px; width: 100%; }
+
+    /* Mobile scroll navigation */
+    .mobile-nav {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .mobile-nav::-webkit-scrollbar { display: none; }
+
+    /* Boton Flotante Fijo de WhatsApp con Animacion de Pulso */
+    .wa-floating-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background-color: #25d366;
+      color: #ffffff !important;
+      border-radius: 50%;
+      box-shadow: 0 4px 18px rgba(37, 211, 102, 0.45), 0 2px 6px rgba(0, 0, 0, 0.15);
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+      animation: wa-pulse 3s infinite ease-in-out;
+    }
+    .wa-floating-btn:hover {
+      transform: scale(1.1) translateY(-2px);
+      box-shadow: 0 8px 26px rgba(37, 211, 102, 0.65), 0 4px 12px rgba(0, 0, 0, 0.2);
+      animation: none;
+    }
+    .wa-floating-btn:active {
+      transform: scale(0.94);
+    }
+    .wa-icon {
+      width: 34px;
+      height: 34px;
+      fill: #ffffff;
+      transition: transform 0.3s ease;
+    }
+    .wa-floating-btn:hover .wa-icon {
+      transform: scale(1.05);
+    }
+    .wa-tooltip {
+      position: absolute;
+      right: 72px;
+      background-color: #0f1b3d;
+      color: #ffffff;
+      padding: 7px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.22);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(10px);
+      transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+      pointer-events: none;
+      font-family: 'Manrope', sans-serif;
+    }
+    .wa-tooltip::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -6px;
+      transform: translateY(-50%);
+      border-width: 6px 0 6px 6px;
+      border-style: solid;
+      border-color: transparent transparent transparent #0f1b3d;
+    }
+    .wa-floating-btn:hover .wa-tooltip {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+    }
+    @keyframes wa-pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.65), 0 4px 18px rgba(37, 211, 102, 0.45);
+      }
+      70% {
+        box-shadow: 0 0 0 18px rgba(37, 211, 102, 0), 0 4px 18px rgba(37, 211, 102, 0.45);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 4px 18px rgba(37, 211, 102, 0.45);
+      }
+    }
+    @media (max-width: 640px) {
+      .wa-floating-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 54px;
+        height: 54px;
+      }
+      .wa-icon {
+        width: 30px;
+        height: 30px;
+      }
+      .wa-tooltip {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body class="bg-background text-foreground antialiased">
+<a class="wa-floating-btn" href="https://wa.me/51957707499?text=Hola,%20deseo%20más%20información%20sobre%20las%20clases%20en%20el%20Club%20Deportivo%20La%20Católica" target="_blank" rel="noreferrer" aria-label="Escribir por WhatsApp">
+  <span class="wa-tooltip">¿Tienes dudas? ¡Escríbenos!</span>
+  <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.989.574 3.842 1.565 5.408L2 22l4.737-1.541A9.953 9.953 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 11.999 2zm0 18a7.952 7.952 0 0 1-4.274-1.248l-.306-.181-3.167 1.03.986-3.093-.199-.318A7.953 7.953 0 0 1 4 12c0-4.411 3.589-8 8-8 4.41 0 8 3.589 8 8s-3.59 8-8 8z"/>
+  </svg>
+</a>
+<div class="flex min-h-screen flex-col bg-background text-foreground">
+
+  <header class="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur">
+    <div class="container-x flex h-14 items-center justify-between md:h-18">
+      <a class="flex items-center gap-2" href="index.html">
+        <img src="assets/images/logo-clc.png?v=2" alt="CLC Club Deportivo La Católica" class="h-8 w-auto md:h-10"/>
+      </a>
+      <nav class="hidden items-center gap-6 lg:gap-8 md:flex">
+        <a href="index.html" class="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Inicio</a><a href="natacion.html" class="text-sm font-medium text-primary font-semibold" aria-current="page">Natación</a><a href="voley.html" class="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Vóley</a><a href="gimnasia.html" class="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Gimnasia</a><a href="telas.html" class="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Telas Artísticas</a><a href="patinaje.html" class="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Patinaje</a><a href="contacto.html" class="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Contacto</a>
+      </nav>
+      <a href="https://wa.me/51957707499" target="_blank" rel="noreferrer"
+         class="hidden sm:inline-flex h-9 items-center rounded-full bg-[color:var(--brand-whatsapp)] px-4 text-sm font-medium text-white transition-colors hover:bg-[color:var(--brand-whatsapp-dark)]">
+        Inscríbete
+      </a>
+    </div>
+    <nav class="border-t border-border/60 md:hidden">
+      <div class="mobile-nav container-x flex gap-5 overflow-x-auto py-2.5 text-sm">
+        <a href="index.html" class="whitespace-nowrap font-medium text-foreground/70 hover:text-primary">Inicio</a><a href="natacion.html" class="whitespace-nowrap font-medium text-primary font-semibold" aria-current="page">Natación</a><a href="voley.html" class="whitespace-nowrap font-medium text-foreground/70 hover:text-primary">Vóley</a><a href="gimnasia.html" class="whitespace-nowrap font-medium text-foreground/70 hover:text-primary">Gimnasia</a><a href="telas.html" class="whitespace-nowrap font-medium text-foreground/70 hover:text-primary">Telas Artísticas</a><a href="patinaje.html" class="whitespace-nowrap font-medium text-foreground/70 hover:text-primary">Patinaje</a><a href="contacto.html" class="whitespace-nowrap font-medium text-foreground/70 hover:text-primary">Contacto</a>
+      </div>
+    </nav>
+  </header>
+  <main class="flex-1"><!--$--><div><section class="relative overflow-hidden" style="background-color:var(--brand-navy);color:#ffffff"><div aria-hidden="true" class="absolute -top-24 -right-24 h-64 w-64 rounded-full opacity-30 blur-2xl" style="background-color:#ffffff"></div><div aria-hidden="true" class="absolute top-1/2 -left-16 h-40 w-40 rounded-full opacity-20 blur-xl" style="background-color:#ffffff"></div><div class="container-x grid gap-12 py-20 md:grid-cols-12 md:py-28"><div class="md:col-span-6 lg:col-span-5"><p class="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.24em] opacity-90" style="color:#ffffff"><span class="inline-block h-px w-8" style="background-color:#ffffff"></span>Disciplina 01 · Afiliados FDPN</p><h1 class="text-balance page-h1 font-display leading-[0.98]">Natación.</h1><p class="mt-6 max-w-md text-lg opacity-95" style="color:#ffffff">Piscina temperada y techada, para todas las edades, todo el año.</p><p class="mt-6 max-w-md text-sm leading-relaxed opacity-85" style="color:#ffffff">Metodología progresiva desde la primera experiencia acuática del bebé hasta la formación de nadadores de selección. Grupos reducidos y profesores certificados.</p><div class="mt-10 flex flex-wrap gap-3"><a href="https://wa.me/51957707499" target="_blank" rel="noreferrer" class="inline-flex h-12 items-center rounded-full border-2 border-transparent bg-[color:var(--brand-whatsapp)] px-7 text-sm font-bold text-white shadow-sport transition-colors hover:bg-[color:var(--brand-whatsapp-dark)]">Reservar vacante</a><a href="contacto.html" style="border-color:#ffffff;color:#ffffff" class="inline-flex h-12 items-center rounded-full border px-7 text-sm font-bold hover:opacity-90">Cómo llegar</a></div></div><div class="relative md:col-span-6 lg:col-span-7"><div class="relative aspect-[4/5] overflow-hidden rounded-sm md:aspect-[5/6]"><img src="assets/images/hero-natacion.jpg?v=2" alt="Piscina temperada del Club Deportivo La Católica" class="h-full w-full object-cover" width="1600" height="1200"/><div class="absolute -bottom-px -left-px h-24 w-24 bg-[color:var(--paper)]"></div></div><div aria-hidden="true" class="absolute -bottom-6 -right-6 h-24 w-24 rotate-12 rounded-full border-4 border-[color:var(--paper)] shadow-sport sticker md:h-28 md:w-28" style="background-color:var(--brand-navy);color:#ffffff;border-color:var(--paper)"><span class="text-center text-xs font-bold uppercase leading-tight">Todo<br/>el año</span></div></div></div></section><section class="border-b border-border bg-[color:var(--paper)]"><div class="container-x grid grid-cols-2 gap-4 py-12 md:grid-cols-4"><div class="rounded-xl border-2 border-[color:var(--paper)] bg-background p-5 shadow-sport" style="border-color:color-mix(in srgb, var(--brand-navy) 30%, var(--paper))"><p class="font-display text-3xl md:text-4xl" style="color:var(--brand-navy)">6</p><p class="mt-1 text-xs uppercase tracking-widest text-muted-foreground">Categorías</p></div><div class="rounded-xl border-2 border-[color:var(--paper)] bg-background p-5 shadow-sport" style="border-color:color-mix(in srgb, var(--brand-navy) 30%, var(--paper))"><p class="font-display text-3xl md:text-4xl" style="color:var(--brand-navy)">Techada</p><p class="mt-1 text-xs uppercase tracking-widest text-muted-foreground">Piscina</p></div><div class="rounded-xl border-2 border-[color:var(--paper)] bg-background p-5 shadow-sport" style="border-color:color-mix(in srgb, var(--brand-navy) 30%, var(--paper))"><p class="font-display text-3xl md:text-4xl" style="color:var(--brand-navy)">Cálida</p><p class="mt-1 text-xs uppercase tracking-widest text-muted-foreground">Temperatura</p></div><div class="rounded-xl border-2 border-[color:var(--paper)] bg-background p-5 shadow-sport" style="border-color:color-mix(in srgb, var(--brand-navy) 30%, var(--paper))"><p class="font-display text-3xl md:text-4xl" style="color:var(--brand-navy)">FDPN</p><p class="mt-1 text-xs uppercase tracking-widest text-muted-foreground">Afiliación</p></div></div></section><section class="bg-[color:var(--paper)]"><div class="container-x py-10 md:py-16 lg:py-20"><div class="mb-16 flex items-end justify-between gap-8"><div><p class="mb-3 text-xs font-semibold uppercase tracking-[0.24em]" style="color:var(--brand-navy)">Horarios y frecuencias</p><h2 class="text-balance text-4xl md:text-5xl">Todo el año, para todas las edades</h2></div></div><div class="space-y-10"><article class="grid gap-6 rounded-xl border border-ink/10 bg-background p-6 shadow-sport md:grid-cols-12 md:p-8"><header class="md:col-span-4"><p class="text-xs uppercase tracking-widest text-muted-foreground">Categoría</p><h3 class="mt-2 text-3xl md:text-4xl">Aquabebé</h3><p class="mt-2 text-sm text-muted-foreground">8 meses a 4 años</p></header><div class="md:col-span-8"><div class="table-container bg-background"><table class="w-full text-left text-sm"><thead><tr style="background-color:var(--brand-navy);color:#ffffff"><th class="px-4 py-3 text-xs font-semibold uppercase tracking-widest">Frecuencia</th><th class="px-4 py-3 text-xs font-semibold uppercase tracking-widest">Horarios</th><th class="px-4 py-3 text-xs font-semibold uppercase tracking-widest">Precio</th></tr></thead><tbody><tr class="border-t border-ink/10 align-top transition-colors hover:bg-[color:var(--row-hover)]" style="--row-hover:color-mix(in srgb, var(--brand-navy) 10%, var(--paper))"><td class="px-4 py-4 font-medium">Sabatina · 4 clases</td><td class="px-4 py-4 text-muted-foreground whitespace-pre-line">12:00 – 12:45 p.m.
+3:00 – 3:45 p.m.</td><td class="px-4 py-4"><span class="inline-block rounded-full px-3 py-1 text-xs font-semibold" style="background-color:color-mix(in srgb, var(--brand-navy) 16%, var(--paper));color:var(--brand-navy)">S/. 180</span></td></tr><tr class="border-t border-ink/10 align-top transition-colors hover:bg-[color:var(--row-hover)]" style="--row-hover:color-mix(in srgb, var(--brand-navy) 10%, var(--paper))"><td class="px-4 py-4 font-medium">Miércoles y Viernes · 8 clases</td><td class="px-4 py-4 text-muted-foreground whitespace-pre-line">3:00 – 3:45 p.m.</td><td class="px-4 py-4"><span class="inline-block rounded-full px-3 py-1 text-xs font-semibold" style="background-color:color-mix(in srgb, var(--brand-navy) 16%, var(--paper));color:var(--brand-navy)">S/. 280</span></td></tr></tbody></table></div></div></article><article class="grid gap-6 rounded-xl border border-ink/10 bg-background p-6 shadow-sport md:grid-cols-12 md:p-8"><header class="md:col-span-4"><p class="text-xs uppercase tracking-widest text-muted-foreground">Categoría</p><h3 class="mt-2 text-3xl md:text-4xl">Menores 1</h3><p class="mt-2 text-sm text-muted-foreground">4 a 7 años</p></header><div class="md:col-span-8"><div class="table-container bg-background"><table class="w-full text-left text-sm"><thead><tr style="background-color:var(--brand-navy);color:#ffffff"><th class="px-4 py-3 text-xs font-semibold uppercase tracking-widest">Frecuencia</th><th class="px-4 py-3 text-xs font-semibold uppercase tracking-widest">Horarios</th><th class="px-4 py-3 text-xs font-semibold uppercase tracking-widest">Precio</th></tr></thead><tbody><tr class="border-t border-ink/10 align-top transition-colors hover:bg-[color:var(--row-hover)]" style="--row-hover:color-mix(in srgb, var(--brand-navy) 10%, var(--paper))"><td class="px-4 py-4 font-medium">Sabatina · 4 clases</td><td class="px-4 py-4 text-muted-foreground whitespace-pre-line">9:00, 10:00, 11:00 a.m.
+12:00 p.m.</td><td class="px-4 py-4"><span class="inline-block rounded-full px-3 py-1 text-xs font-semibold" style="background-color:color-mix(in srgb, var(--brand-navy) 16%, var(--paper));color:var(--brand-navy)">S/. 150</span></td></tr><tr class="border-t border-ink/10 align-top transition-colors hover:bg-[color:var(--row-hover)]" style="--row-hover:color-mix(in srgb, var(--brand-navy) 10%, var(--paper))"><td class="px-4 py-4 font-medium">Martes y Jueves · 8 clases</td><td class="px-4 py-4 text-muted-foreground whitespace-pre-line">4:00 y 5:00 p.m.</td><td class="px-4 py-4"><span class="inline-block rounded-full px-3 py-1 text-xs font-semibold" style="background-color:color-mix(in srgb, var(--brand-navy) 16%, var(--paper));color:var(--brand-navy)">S/. 240</span></td></tr><tr class="border-t border-ink/10 align-top transition-colors hover:bg-[color:var(--row-hover)]" style="--row-hover:color-mix(in srgb, var(--brand-navy) 10%, var(--paper))"><td class="px-4 py-4 font-medium">L · M · V · 12 clases</td><td class="px-4 py-4 text-muted-foreground whitespace-pre-line">4:00 y 5:00 p.m.</td><td class="px-4 py-4"><span class="inline-block rounded-full px-3 py-1 text-xs font-semibold" style="background-color:color-mix(in srgb, var(--brand-navy) 16%, var(--paper));color:var(--brand-navy)">S/. 270</span></td></tr></tbody></table></div></div></article><article class="grid gap-6 rounded-xl border border-ink/10 bg-background p-6 shadow-sport md:grid-cols-12 md:p-8"><header class="md:col-span-4"><p class="text-xs uppercase tracking-widest text-muted-foreground">Categoría</p><h3 class="mt-2 text-3xl md:text-4xl">Menores 2</h3><p class="mt-2 text-sm text-muted-foreground">8 a 14 años</p></header><div class="md:col-span-8"><div class="table-container bg-background"><table class="w-full text-left text-sm"><thead><tr style="background-color:var(--brand-navy);color:#ffffff"><th class="px-4 py-3 text-xs font-semibold uppercase tracking-widest">Frecuencia</th><th class="px-4 py-3 text-xs font-semibold uppercase tracking-widest">Horarios</th><th class="px-4 py-3 text-xs font-semibold uppercase tracking-widest">Precio</th></tr></thead><tbody><tr class="border-t border-ink/10 align-top transition-colors hover:bg-[color:var(--row-hover)]" style="--row-hover:color-mix(in srgb, var(--brand-navy) 10%, var(--paper))"><td class="px-4 py-4 font-medium">Sabatina · 4 clases</td><td class="px-4 py-4 text-muted-foreground whitespace-pre-line">9:00, 10:00, 11:00 a.m.</td><td class="px-4 py-4"><span class="inline-block rounded-full px-3 py-1 text-xs font-semibold" style="background-color:color-mix(in srgb, var(--brand-navy) 16%, var(--paper));color:var(--brand-navy)">S/. 150</span></td></tr><tr class="border-t border-ink/10 align-top transition-colors hover:bg-[color:var(--row-hover)]" style="--row-hover:color-mix(in srgb, var(--brand-navy) 10%, var(--paper))"><td class="px-4 py-4 font-medium">Martes y Jueves · 8 clases</td><td class="px-4 py-4 text-muted-foreground whitespace-pre-line">4:00, 5:00, 6:00 p.m.</td><td class="px-4 py-4"><span class="inline-block rounded-full px-3 py-1 text-xs font-semibold" style="background-color:color-mix(in srgb, var(--brand-navy) 16%, var(--paper));color:var(--brand-navy)">S/. 240</span></td></tr><tr class="border-t border-ink/10 align-top transition-colors hover:bg-[color:var(--row-hover)]" style="--row-hover:color-mix(in srgb, var(--brand-navy) 10%, var(--paper))"><td class="px-4 py-4 font-medium">L · M · V · 12 clases</td><td class="px-4 py-4 text-muted-foreground whitespace-pre-line">4:00, 5:00, 6:00 p.m.</td><td class="px-4 py-4"><span class="inline-block rounded-full px-3 py-1 text-xs font-semibold" style="background-color:color-mix(in srgb, var(--brand-navy) 16%, var(--paper));color:var(--brand-navy)">S/. 270</span></td></tr></tbody></table></div></div></article><article class="grid gap-6 rounded-xl border border-ink/10 bg-background p-6 shadow-sport md:grid-cols-12 md:p-8"><header class="md:col-span-4"><p class="text-xs uppercase tracking-widest text-muted-foreground">Categoría</p><h3 class="mt-2 text-3xl md:text-4xl">Jóvenes y Adultos</h3><p class="mt-2 text-sm text-muted-foreground">15 años a más</p></header><div class="md:col-span-8"><div class="table-container bg-background"><table class="w-full text-left text-sm"><thead><tr style="background-color:var(--brand-navy);color:#ffffff"><th class="px-4 py-3 text-xs font-semibold uppercase tracking-widest">Frecuencia</th><th class="px-4 py-3 text-xs font-semibold uppercase tracking-widest">Horarios</th><th class="px-4 py-3 text-xs font-semibold uppercase tracking-widest">Precio</th></tr></thead><tbody><tr class="border-t border-ink/10 align-top transition-colors hover:bg-[color:var(--row-hover)]" style="--row-hover:color-mix(in srgb, var(--brand-navy) 10%, var(--paper))"><td class="px-4 py-4 font-medium">Sabatina · 4 clases</td><td class="px-4 py-4 text-muted-foreground whitespace-pre-line">6:00 – 9:50 a.m. / 7:00 – 9:50 p.m.</td><td class="px-4 py-4"><span class="inline-block rounded-full px-3 py-1 text-xs font-semibold" style="background-color:color-mix(in srgb, var(--brand-navy) 16%, var(--paper));color:var(--brand-navy)">S/. 150</span></td></tr><tr class="border-t border-ink/10 align-top transition-colors hover:bg-[color:var(--row-hover)]" style="--row-hover:color-mix(in srgb, var(--brand-navy) 10%, var(--paper))"><td class="px-4 py-4 font-medium">Martes y Jueves · 8 clases</td><td class="px-4 py-4 text-muted-foreground whitespace-pre-line">6:00 – 9:50 a.m. / 7:00 – 9:50 p.m.</td><td class="px-4 py-4"><span class="inline-block rounded-full px-3 py-1 text-xs font-semibold" style="background-color:color-mix(in srgb, var(--brand-navy) 16%, var(--paper));color:var(--brand-navy)">S/. 180</span></td></tr><tr class="border-t border-ink/10 align-top transition-colors hover:bg-[color:var(--row-hover)]" style="--row-hover:color-mix(in srgb, var(--brand-navy) 10%, var(--paper))"><td class="px-4 py-4 font-medium">L · M · V · 12 clases</td><td class="px-4 py-4 text-muted-foreground whitespace-pre-line">6:00 – 9:50 a.m. / 7:00 – 9:50 p.m.</td><td class="px-4 py-4"><span class="inline-block rounded-full px-3 py-1 text-xs font-semibold" style="background-color:color-mix(in srgb, var(--brand-navy) 16%, var(--paper));color:var(--brand-navy)">S/. 220</span></td></tr></tbody></table></div></div></article><article class="grid gap-6 rounded-xl border border-ink/10 bg-background p-6 shadow-sport md:grid-cols-12 md:p-8"><header class="md:col-span-4"><p class="text-xs uppercase tracking-widest text-muted-foreground">Categoría</p><h3 class="mt-2 text-3xl md:text-4xl">Habilidades Diferentes</h3><p class="mt-2 text-sm text-muted-foreground">Niños de 4 a 8 años</p></header><div class="md:col-span-8"><div class="table-container bg-background"><table class="w-full text-left text-sm"><thead><tr style="background-color:var(--brand-navy);color:#ffffff"><th class="px-4 py-3 text-xs font-semibold uppercase tracking-widest">Frecuencia</th><th class="px-4 py-3 text-xs font-semibold uppercase tracking-widest">Horarios</th><th class="px-4 py-3 text-xs font-semibold uppercase tracking-widest">Precio</th></tr></thead><tbody><tr class="border-t border-ink/10 align-top transition-colors hover:bg-[color:var(--row-hover)]" style="--row-hover:color-mix(in srgb, var(--brand-navy) 10%, var(--paper))"><td class="px-4 py-4 font-medium">Sabatina · 4 clases</td><td class="px-4 py-4 text-muted-foreground whitespace-pre-line">2:00 – 2:45 p.m.</td><td class="px-4 py-4"><span class="inline-block rounded-full px-3 py-1 text-xs font-semibold" style="background-color:color-mix(in srgb, var(--brand-navy) 16%, var(--paper));color:var(--brand-navy)">S/. 180</span></td></tr></tbody></table></div></div></article><article class="grid gap-6 rounded-xl border border-ink/10 bg-background p-6 shadow-sport md:grid-cols-12 md:p-8"><header class="md:col-span-4"><p class="text-xs uppercase tracking-widest text-muted-foreground">Categoría</p><h3 class="mt-2 text-3xl md:text-4xl">Selección</h3><p class="mt-2 text-sm text-muted-foreground">Categorías M1, M2, Infantil A, Infantil B, Juvenil</p></header><div class="md:col-span-8"><div class="table-container bg-background"><table class="w-full text-left text-sm"><thead><tr style="background-color:var(--brand-navy);color:#ffffff"><th class="px-4 py-3 text-xs font-semibold uppercase tracking-widest">Frecuencia</th><th class="px-4 py-3 text-xs font-semibold uppercase tracking-widest">Horarios</th><th class="px-4 py-3 text-xs font-semibold uppercase tracking-widest">Precio</th></tr></thead><tbody><tr class="border-t border-ink/10 align-top transition-colors hover:bg-[color:var(--row-hover)]" style="--row-hover:color-mix(in srgb, var(--brand-navy) 10%, var(--paper))"><td class="px-4 py-4 font-medium">Lunes a Viernes · 12 clases</td><td class="px-4 py-4 text-muted-foreground whitespace-pre-line">Según categoría</td><td class="px-4 py-4"><span class="inline-block rounded-full px-3 py-1 text-xs font-semibold" style="background-color:color-mix(in srgb, var(--brand-navy) 16%, var(--paper));color:var(--brand-navy)">S/. 320</span></td></tr></tbody></table></div></div></article></div><div class="mt-16 flex items-start gap-4 rounded-xl border-l-4 bg-background p-6 text-sm text-foreground shadow-sport" style="border-left-color:var(--brand-navy)"><div><p class="font-semibold">Importante</p><p class="mt-1 text-muted-foreground">Aceptamos pago en efectivo, Yape o Plin. Vacantes limitadas por horario.</p></div></div></div></section><section class="bg-background"><div class="container-x py-10 md:py-16 lg:py-20"><div class="relative flex flex-col items-start justify-between gap-8 overflow-hidden rounded-2xl p-8 md:flex-row md:items-end md:p-12" style="background-color:color-mix(in srgb, var(--brand-navy) 10%, var(--paper))"><div aria-hidden="true" class="absolute -right-10 -top-10 h-40 w-40 rounded-full opacity-40 blur-2xl" style="background-color:var(--brand-navy)"></div><h2 class="relative max-w-xl text-balance text-4xl md:text-5xl">¿Listo para <span class="font-display" style="color:var(--brand-navy)">empezar</span>?<br/>Las vacantes son limitadas.</h2><a href="https://wa.me/51957707499" target="_blank" rel="noreferrer" class="relative inline-flex h-12 items-center rounded-full bg-[color:var(--brand-whatsapp)] px-8 text-sm font-medium text-white shadow-sport transition-colors hover:bg-[color:var(--brand-whatsapp-dark)]">Escríbenos al 957 707 499</a></div></div></section></div>
+
+</main>
+  <footer class="border-t border-border bg-[color:var(--paper)] text-[color:var(--ink)]">
+    <div class="container-x grid gap-8 py-10 sm:grid-cols-2 md:grid-cols-4 md:py-14">
+      <div class="sm:col-span-2">
+        <img src="assets/images/logo-clc.png?v=2" alt="CLC Club Deportivo La Católica" class="h-10 w-auto" />
+        <p class="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
+          Somos parte de una comunidad educativa junto a Católica School y Católica Kids Club. Formación deportiva de excelencia en Carabayllo.
+        </p>
+        <div class="mt-4 flex gap-2">
+          <span class="h-1.5 w-8 rounded-full bg-[color:var(--brand-blue)]"></span>
+          <span class="h-1.5 w-8 rounded-full bg-[color:var(--brand-blue-dark)]"></span>
+          <span class="h-1.5 w-8 rounded-full bg-[color:var(--muted-foreground)]"></span>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-xs font-semibold uppercase tracking-widest text-[color:var(--brand-blue)]">Disciplinas</h4>
+        <ul class="mt-3 space-y-2 text-sm text-foreground/80">
+          <li><a href="natacion.html" class="hover:text-[color:var(--brand-blue)] transition-colors">Natación</a></li>
+          <li><a href="voley.html" class="hover:text-[color:var(--brand-blue)] transition-colors">Vóley</a></li>
+          <li><a href="gimnasia.html" class="hover:text-[color:var(--brand-blue)] transition-colors">Gimnasia</a></li>
+          <li><a href="telas.html" class="hover:text-[color:var(--brand-blue)] transition-colors">Telas Artísticas</a></li>
+          <li><a href="patinaje.html" class="hover:text-[color:var(--brand-blue)] transition-colors font-medium text-primary">Patinaje</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs font-semibold uppercase tracking-widest text-[color:var(--brand-blue)]">Contacto</h4>
+        <ul class="mt-3 space-y-2 text-sm text-foreground/80">
+          <li><a href="https://wa.me/51957707499" target="_blank" rel="noreferrer" class="hover:text-[color:var(--brand-blue)]">957 707 499</a></li>
+          <li><a href="https://instagram.com/clubdeportivo_lacatolica" target="_blank" rel="noreferrer" class="hover:text-[color:var(--brand-blue)]">@clubdeportivo_lacatolica</a></li>
+          <li class="pt-1 leading-snug text-foreground/70">Calle San Pedro Clavers Mz Q2<br/>VII Etapa, Urb. Santo Domingo<br/>Carabayllo, Lima</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container-x pb-8">
+      <h4 class="mb-3 text-xs font-semibold uppercase tracking-widest text-[color:var(--brand-blue)]">Cómo llegar</h4>
+      <div class="overflow-hidden rounded-xl border border-border">
+        <iframe title="Ubicación Club Deportivo La Católica"
+                src="https://www.google.com/maps?q=Calle+San+Pedro+Clavers+Mz+Q2+Urb.+Santo+Domingo+Carabayllo+Lima&output=embed"
+                width="100%" height="240" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="border:0;display:block;"></iframe>
+      </div>
+    </div>
+    <div class="border-t border-ink/10">
+      <div class="container-x flex flex-col gap-2 py-4 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+        <span>© 2026 Club Deportivo La Católica. Todos los derechos reservados.</span>
+        <span>Afiliados a FDPN</span>
+      </div>
+    </div>
+  </footer>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const el = document.getElementById(this.getAttribute('href').slice(1));
+        if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+  });
+</script>
+</body>
+</html>
+  

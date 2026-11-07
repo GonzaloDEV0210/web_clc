@@ -1,0 +1,1 @@
+var e=`/assets/hero-voley-DVpr3Jfz.jpg`;export{e as t};

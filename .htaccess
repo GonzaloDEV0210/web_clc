@@ -1,0 +1,22 @@
+# Configuración Apache para CLC - Club Deportivo La Católica
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /web_clc/
+
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Soporte para URLs limpias sin extensión .html
+  RewriteRule ^natacion/?$ natacion.html [L,QSA]
+  RewriteRule ^voley/?$ voley.html [L,QSA]
+  RewriteRule ^gimnasia/?$ gimnasia.html [L,QSA]
+  RewriteRule ^telas/?$ telas.html [L,QSA]
+  RewriteRule ^patinaje/?$ patinaje.html [L,QSA]
+  RewriteRule ^contacto/?$ contacto.html [L,QSA]
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType image/svg+xml .svg
+  AddType font/woff2 .woff2
+</IfModule>

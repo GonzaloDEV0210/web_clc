@@ -1,0 +1,1 @@
+var e=`/assets/hero-gimnasia-BKyb1fhq.jpg`;export{e as t};
